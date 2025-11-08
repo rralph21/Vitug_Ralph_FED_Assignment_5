@@ -1,10 +1,21 @@
 body {
 	font-family: "Arial", sans-serif;
-	background-color: #f4f4f4;
+	background-color: cornsilk;
 	color: #333;
 	margin: 0;
 	padding: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+h1 {
+	text-align: bottom;
+	color: blueviolet;
+	padding-top: 10rem;
+}
+
+h2 {
+	text-align: bottom;
+	padding-left: 10rem;
 }
