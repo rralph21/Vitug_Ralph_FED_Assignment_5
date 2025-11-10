@@ -16,3 +16,14 @@ When a user type a tree's common name like Ash or Maple and clicks "Search", the
 - The number of each tree in the ranking
 - The Tree's common name
 - The diameter of the tree's trunk - Diameter at Breast Height (DBH)
+
+# fetch and Async
+
+- API returns different data formats (JSON).
+- responses might take time, so async code is needed to handle it smoothly.
+- error handling is important to avoid breaking the script.
+I can display live, updated data without refreshing the page.
+
+## Summary
+
+This Assignment has allowed me to work on script that can connect to real time data using API, how to handle the data and display it. 
