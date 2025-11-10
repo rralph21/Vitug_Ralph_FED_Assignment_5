@@ -5,6 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Winnipeg Tree Listing</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    #results { 
+      width: 100%; 
+      border-collapse: collapse; 
+    }
+
+    #results caption { 
+      text-align: left; 
+      padding: 0.75rem; 
+      color: var(--muted); 
+    }
+
+    #results th, #results td {
+      padding: 0.75rem;
+      border-top: 1px solid rgba(255,255,255,0.06); 
+      text-align: left; 
+    }
+
+    #results th:nth-child(1), #results td:nth-child(1) { 
+      width: 4ch; text-align: right; 
+    }
+
+    #results th:nth-child(3), #results td:nth-child(3) { 
+      text-align: right; 
+    }
+    
+  </style>
 </head>
 <body>
   <header>
