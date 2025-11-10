@@ -3,21 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Module 5 Demo!</title>
+  <title>Winnipeg Tree Listing</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header>
+    <h1> Winnipeg Tree Search API</h1>
+    <p class="subtitle">Find the top 100 largest trees. Using common names</p>
+    
+  <main>
+    <form id="search-form" aria-describedby="hint">
+    <div class="field">
+    <label for="commonName">Common name contains</label>
+    <input
+    id="commonName"
+    name="commonName"
+    type="text"
+    placeholder="Try: ash, elm, maple"
+    autocomplete="off"
+    required
+    />
+    </div>
+    <button id="searchBtn" type="submit">Search</button>
+    <p id="hint" 
+      class="hint">Tip: Use short terms for more matches. 
+                Leave blank to see overall top 100.</p>
+    </form>
 
-  <div class="form-container">
-      <form id="userForm"></form>
-      <h2> </h2>
-      <div>
-        <h2></h2>
-      </div>
-  </div>
-  <div>
-    <h1> </h1>
-  </div> 
+    <section id="status" class="status" aria-live="polite" aria-atomic="true"></section>
+
+    <div class="results-wrap">
+      <table id="results" class="visually-hidden">
+        <caption>Matching trees (ordered by diameter_at_breast_height descending)</caption>
+        
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>
