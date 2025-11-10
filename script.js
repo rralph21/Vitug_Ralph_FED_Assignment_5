@@ -53,7 +53,7 @@ function renderTable(rows) {
 async function fetchTrees() {
   setStatus("Loading…");
   try {
-    const res = await fetch(url);
+    const res = await fetch(encodedURL);
     if (!res.ok) {
       let details = "";
       try { details = await res.text(); } catch {}
@@ -74,4 +74,4 @@ async function fetchTrees() {
   }
 }
 
-fetchTrees();
+fetchTrees(commonName);
