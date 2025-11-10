@@ -1,3 +1,13 @@
+:root {
+--bg: #22c55e;
+--text: #eef2f7;
+--muted: #22c55e;
+--accent: #22c55e;
+--accent-2: black;
+--error: #ef4444;
+--focus: black;
+}
+
 * { box-sizing: border-box; }
 
 html, body { 
@@ -18,7 +28,8 @@ header {
 
 header h1 { 
 	margin: 0; 
-	font-size: clamp(1.25rem, 3vw, 2rem); 
+	font-size: clamp(1.25rem, 3vw, 2rem);
+	color: #22c55e;
 }
 
 .subtitle { 
@@ -62,3 +73,31 @@ form {
 	 outline: 2px solid var(--focus); 
 	 outline-offset: 2px; 
 }
+
+button[type="submit"]:hover { 
+	filter: brightness(1.05); 
+}
+
+.hint { 
+	color: var(--muted); 
+	grid-column: 1 / -1; margin: 0; 
+}
+
+.status { 
+	margin: 1rem 0; 
+	min-height: 1.25rem; 
+	color: var(--muted); 
+}
+
+.status.error { 
+	color: var(--error); 
+}
+
+.results-wrap { 
+	background: var(--card); 
+	border: 1px solid rgba(255,255,255,0.0)
+}
+
+.visually-hidden { position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap; border: 0; padding: 0; }
+
+footer { text-align: center; padding: 2rem 1rem; color: var(--muted); }
