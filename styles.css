@@ -1,6 +1,6 @@
 :root {
 --bg: #22c55e;
---text: #eef2f7;
+--text: black;
 --muted: #22c55e;
 --accent: #22c55e;
 --accent-2: black;
@@ -98,6 +98,19 @@ button[type="submit"]:hover {
 	border: 1px solid rgba(255,255,255,0.0)
 }
 
-.visually-hidden { position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap; border: 0; padding: 0; }
+.visually-hidden { 
+	position: absolute !important;
+	height: 1px;
+	width: 1px; 
+	overflow: hidden; 
+	clip: rect(1px, 1px, 1px, 1px); 
+	white-space: nowrap; 
+	border: 0; 
+	padding: 0; 
+}
 
-footer { text-align: center; padding: 2rem 1rem; color: var(--muted); }
+footer { 
+	text-align: center; 
+	padding: 2rem 1rem; 
+	color: var(--muted); 
+}

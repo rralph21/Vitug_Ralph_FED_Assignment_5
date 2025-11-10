@@ -1,30 +1,36 @@
-let commonName = 'Ash'; // This would be coming from the form input.
-const apiUrl = 'https://data.winnipeg.ca/resource/d3jk-hb6j.json?' +
-                `$where=common_name LIKE '%${commonName}%'` +
-                '&$order=diameter_at_breast_height DESC' +
-                '&$limit=100';
-const encodedURL = encodeURI(apiUrl);
+document.getElementById("search-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  commonName = document.getElementById("commonName").value;
+  const apiUrl =    
+    // This would be coming from the form input.
+    'https://data.winnipeg.ca/resource/d3jk-hb6j.json?' +
+    `$where=lower(common_name) LIKE lower('%${commonName}%')` +
+    '&$order=diameter_at_breast_height DESC' +
+    '&$limit=100';
+  encodedURL = encodeURI(apiUrl);  
+  fetchTrees();                                 
+});
 
 function setStatus(msg, isError = false) {
   const el = document.getElementById("status");
-  if (!el) return;
-  el.textContent = msg;
-  el.classList.toggle("error", isError);
+    if (!el) return;
+    el.textContent = msg;
+    el.classList.toggle("error", isError);
 }
 
 function renderTable(rows) {
   const table = document.getElementById("results");
   const tbody = table && table.querySelector("tbody");
-  if (!table || !tbody) {
-    console.warn("Need a table#results with a <tbody> to render.");
-    return;
-  }
+    if (!table || !tbody) {
+        
+        return;
+    }
 
-  if (!rows || rows.length === 0) {
-    tbody.innerHTML = "";
-    table.classList.add("visually-hidden");
-    return;
-  }
+    if (!rows || rows.length === 0) {
+        tbody.innerHTML = "";
+        table.classList.add("visually-hidden");
+        return;
+    }
 
   const frag = document.createDocumentFragment();
   rows.forEach((row, idx) => {
